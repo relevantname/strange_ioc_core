@@ -1,0 +1,9 @@
+﻿using strange.extensions.mediation.impl;
+
+namespace %TemplateNS%
+{
+  public class %Template%View : EventView
+  {
+    %ListenerFunction%
+  }
+}

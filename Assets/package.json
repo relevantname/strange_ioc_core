@@ -1,0 +1,27 @@
+{
+  "name": "com.udogames.core",
+  "displayName": "UdoGames Core Library",
+  "version": "0.1.0",
+  "unity": "6000.0",
+  "description": "Core library: StrangeIoC MVC framework + panels, promises, logger, localization, assets",
+  "keywords": [
+    "game",
+    "development"
+  ],
+  "homepage": "https://udogames.com/",
+  "license": "PRIVATE",
+  "author": {
+    "name": "Udo Development Team",
+    "email": "support@udogames.com",
+    "url": "https://udogames.com/"
+  },
+  "dependencies": {
+    "com.unity.ugui": "2.0.0",
+    "com.unity.addressables": "2.7.4",
+    "com.unity.localization": "1.5.8",
+    "com.unity.editorcoroutines": "1.0.1",
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  },
+  "documentationUrl": "https://udogames.com/docs",
+  "changelogUrl": "https://udogames.com/docs/release-notes"
+}

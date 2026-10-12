@@ -1,0 +1,44 @@
+﻿using Com.Udogames.Core.Panels.Models.Cameras;
+using Com.Udogames.Core.Panels.Models.Canvases;
+using Com.Udogames.Core.Panels.Models.Panel;
+using Com.Udogames.Core.Panels.Views.Cameras;
+using Com.Udogames.Core.Panels.Views.Canvases;
+using strange.extensions.context.api;
+using strange.extensions.context.impl;
+using Test.%Name%.Scripts.Commands;
+using Tests.Runtime.Tools.MockInput;
+using UnityEngine;
+using Views.%Name%;
+
+namespace %TemplateNS%
+{
+  public class %Template%Context : MVCSContext
+  {
+    public %Template%Context(MonoBehaviour view) : base(view)
+    {
+    }
+
+    public %Template%Context(MonoBehaviour view, ContextStartupFlags flags) : base(view, flags)
+    {
+    }
+
+    protected override void mapBindings()
+    {
+      base.mapBindings();
+      
+      // models
+      injectionBinder.Bind<ICanvasModel>().To<CanvasModel>().ToSingleton();
+      injectionBinder.Bind<IPanelModel>().To<PanelModel>().ToSingleton();
+      injectionBinder.Bind<ICameraModel>().To<CameraModel>().ToSingleton();
+      
+      mediationBinder.Bind<CanvasView>().To<CanvasMediator>();
+      mediationBinder.Bind<CameraView>().To<CameraMediator>();
+      mediationBinder.Bind<KeyboardListenerView>().To<KeyboardListenerMediator>();
+      
+      mediationBinder.Bind<%Name%View>().To<%Name%Mediator>();
+      
+      commandBinder.Bind(ContextEvent.START).InSequence().To<AddKeyboardListener>().To<Init%Template%Command>();
+      commandBinder.Bind("1").To<Init%Template%Command>();
+    }
+  }
+}

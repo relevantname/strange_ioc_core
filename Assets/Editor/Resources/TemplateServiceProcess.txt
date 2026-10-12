@@ -1,0 +1,20 @@
+﻿package %TemplateNS%;
+
+import com.udogames.core.exceptions.ProcessException;
+import com.udogames.core.interfaces.IRequestInfo;
+import com.udogames.core.interfaces.IRequestProcess;
+import org.springframework.stereotype.Component;
+import %ServiceNS%.vo.%ServiceName%RequestVo;
+import %ServiceNS%.vo.%ServiceName%ResponseVo;
+
+@Component
+public class %ServiceName%Process implements IRequestProcess
+{
+  public void execute(IRequestInfo model) throws ProcessException
+  {
+    %ServiceName%RequestVo vo = model.getRequestData(%ServiceName%RequestVo.class);
+    %ServiceName%ResponseVo responseVo = model.getResponseData(%ServiceName%ResponseVo.class);
+    
+    
+  }
+}

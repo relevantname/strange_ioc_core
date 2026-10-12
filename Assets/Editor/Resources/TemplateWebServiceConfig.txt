@@ -1,0 +1,23 @@
+﻿package %TemplateNS%;
+
+import com.udogames.core.annotations.*;
+import com.udogames.core.enums.ServiceType;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import %TemplateNS%.vo.%ServiceName%RequestVo;
+import %TemplateNS%.vo.%ServiceName%ResponseVo;
+import %TemplateNS%.filter.%ServiceName%Filter;
+import %TemplateNS%.process.%ServiceName%Process;
+
+public class %ServiceName%Config
+{
+  @ServiceMapping(name = "%ServiceKey%", type = ServiceType.POST)
+  @RequestMapping(value = "%ServiceUrl%", method = RequestMethod.POST)
+  @ResponseData(type = %ServiceName%ResponseVo.class)
+  @AddRequestFilter(type = %ServiceName%Filter.class)
+  @AddRequestProcess(type = %ServiceName%Process.class)
+  public void configuration(@RequestBody final %ServiceName%RequestVo data)
+  {
+  }
+}

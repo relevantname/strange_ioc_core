@@ -1,0 +1,13 @@
+﻿using strange.extensions.context.impl;
+
+namespace %TemplateNS%
+{
+  public class %Template%Bootstrap : ContextView
+  {
+    private void Awake()
+    {
+      //Instantiate the context, passing it this instance.
+      context = new %Template%Context(this);
+    }
+  }
+}

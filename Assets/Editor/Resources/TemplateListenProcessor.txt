@@ -1,0 +1,20 @@
+﻿using Com.Udogames.Core.Data.Models.Remote;
+using Enums;
+using strange.extensions.command.impl;
+using strange.extensions.injector;
+
+namespace %TemplateNS%
+{
+  public class %Template%ListenProcessor : EventCommand
+  {
+    [Inject]
+    public IRemoteDataModel remoteDataModel { get; set; }
+
+    public override void Execute()
+    {
+      %Template%ResponseVo responseVo = remoteDataModel.GetData<%Template%ResponseVo>(ServiceKey.%Template%);
+      
+      
+    }
+  }
+}

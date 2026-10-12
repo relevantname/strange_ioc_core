@@ -1,0 +1,28 @@
+﻿using strange.extensions.injector;
+using strange.extensions.mediation.impl;
+
+namespace %TemplateNS%
+{
+  public enum %Template%ViewEvent
+  {
+    %EventEnum%
+  }
+
+  public class %Template%Mediator : EventMediator
+  {
+    [Inject]
+    public %Template%View view { get; set; }
+
+    public override void OnRegister()
+    {
+      %AddListener%
+    }
+
+    %ListenerFunction%
+
+    public override void OnRemove()
+    {
+      %RemoveListener%
+    }
+  }
+}

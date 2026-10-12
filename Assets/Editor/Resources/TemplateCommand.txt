@@ -1,0 +1,18 @@
+﻿using Com.Udogames.Core.Panels.Models.Panel;
+using Enums;
+using strange.extensions.command.impl;
+using strange.extensions.injector;
+
+namespace %TemplateNS%
+{
+  public class Init%Template%Command : EventCommand
+  {
+    [Inject]
+    public IPanelModel panelModel { get; set; }
+    
+    public override void Execute()
+    {
+      //panelModel.Open(PanelKey.%Name%, CanvasKey.Default);
+    }
+  }
+}
